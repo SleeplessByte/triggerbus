@@ -2,7 +2,7 @@
   "name": "triggerbus",
   "version": "1.0.0",
   "description": "Simple eventbus you can trigger",
-  "main": "triggerbus.js",
+  "main": "dist/triggerbus.js",
   "scripts": {
     "build": "cross-env BABEL_ENV=production rollup -c",
     "watch": "rollup -wc",
