@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>triggerbus</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="dist/triggerbus.iife.js"></script>
+</head>
+<body>
+    <script>
+        const bus = triggerbus()
+        const off = bus.on('event', function(param) { console.log('Got myself a ' + param) })
+        bus.on('event', function(param) { console.log('But did I get a ' + param) })
+        bus.trigger('event', 'pizza')
+
+        off()
+
+        bus.trigger('event', 'real pizza')
+        bus.off('event')
+
+        bus.trigger('event', 'wrap')
+        // sad no pizza
+    </script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+{
+  "name": "triggerbus",
+  "version": "1.0.0",
+  "description": "Simple eventbus you can trigger",
+  "main": "triggerbus.js",
+  "scripts": {
+    "build": "cross-env BABEL_ENV=production rollup -c",
+    "watch": "rollup -wc",
+    "test": "karma start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SleeplessByte/triggerbus.git"
+  },
+  "keywords": [
+    "event",
+    "javascript",
+    "eventbus"
+  ],
+  "author": "Derk-Jan Karrenbeld",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/SleeplessByte/triggerbus/issues"
+  },
+  "homepage": "https://github.com/SleeplessByte/triggerbus#readme",
+  "devDependencies": {
+    "@babel/core": "^7.0.0-beta.51",
+    "@babel/preset-env": "^7.0.0-beta.51",
+    "babel-preset-minify": "^0.5.0-alpha.a24dd066",
+    "cross-env": "^5.2.0",
+    "jasmine-core": "^3.1.0",
+    "karma": "^2.0.3",
+    "karma-chrome-launcher": "^2.2.0",
+    "karma-cli": "^1.0.1",
+    "karma-jasmine": "^1.1.2",
+    "karma-rollup-preprocessor": "^6.0.0",
+    "rollup": "^0.60.7",
+    "rollup-plugin-babel": "^4.0.0-beta.5"
+  },
+  "dependencies": {}
+}
