@@ -1,10 +1,10 @@
 {
   "name": "triggerbus",
-  "version": "1.2.0",
+  "version": "2.0.0",
   "description": "Simple eventbus you can trigger",
-  "main": "dist/triggerbus.js",
+  "main": "dist/es/triggerbus.js",
   "scripts": {
-    "build": "cross-env BABEL_ENV=production rollup -c && cpx src/**/*.d.ts dist",
+    "build": "rimraf dist && cross-env BABEL_ENV=production rollup -c && cpx src/**/*.d.ts dist",
     "watch": "rollup -wc",
     "test": "karma start --single-run",
     "test:ci": "karma start --single-run --browsers Firefox",
@@ -38,6 +38,7 @@
     "karma-firefox-launcher": "^1.1.0",
     "karma-jasmine": "^1.1.2",
     "karma-rollup-preprocessor": "^6.0.0",
+    "rimraf": "^2.6.2",
     "rollup": "^0.60.7",
     "rollup-plugin-babel": "^4.0.0-beta.5"
   },

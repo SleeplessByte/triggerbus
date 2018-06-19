@@ -5,24 +5,24 @@ export default [
         input: 'src/triggerbus.js',
         output: [
             {
-                file: 'dist/triggerbus.js',
+                file: 'dist/es/triggerbus.js',
                 format: 'es'
             },
             {
-                file: 'dist/triggerbus.csj.js',
+                file: 'dist/cjs/triggerbus.js',
                 format: 'cjs',
             },
             {
-                file: 'dist/triggerbus.amd.js',
+                file: 'dist/amd/triggerbus.js',
                 format: 'amd'
             },
             {
-                file: 'dist/triggerbus.iife.js',
+                file: 'dist/iife/triggerbus.js',
                 format: 'iife',
                 name: 'triggerbus'
             },
             {
-                file: 'dist/triggerbus.umd.js',
+                file: 'dist/umd/triggerbus.js',
                 format: 'umd',
                 name: 'triggerbus'
             }
@@ -36,7 +36,7 @@ export default [
     {
         input: 'src/triggerbus.js',
         output: {
-            file: 'dist/triggerbus.mjs',
+            file: 'dist/mjs/triggerbus.mjs',
             format: 'es'
         }
     }
