@@ -1,6 +1,6 @@
 {
   "name": "triggerbus",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Simple eventbus you can trigger",
   "main": "dist/es/triggerbus.js",
   "scripts": {
