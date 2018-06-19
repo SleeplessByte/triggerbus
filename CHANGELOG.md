@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.0.1
+
+Remove package lock
+
 ## 2.0.0
 
 - Separates each version into their own folder
