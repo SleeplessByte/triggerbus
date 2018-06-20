@@ -38,7 +38,8 @@ import triggerbus from 'triggerbus'
 ```
 
 Additionally there is
-- a umd bundle at `triggerbus/dist/umd/triggerbus.js'
+
+- a umd bundle at `triggerbus/dist/umd/triggerbus.js`
 - a iife at `triggerbus/dist/iife/triggerbus.js`
 - import as CommonJS from `triggerbus/dist/cjs/triggerbus.js`
 - import untranspiled or javascript module from `triggerbus/dist/mjs/triggerbus.js`
