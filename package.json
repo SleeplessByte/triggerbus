@@ -4,7 +4,7 @@
   "description": "Simple eventbus you can trigger",
   "main": "dist/es/triggerbus.js",
   "scripts": {
-    "build": "rimraf dist && cross-env BABEL_ENV=production rollup -c && cpx src/**/*.d.ts dist",
+    "build": "rimraf dist && cross-env BABEL_ENV=production rollup -c && cpx \"src/**/*.d.ts\" dist",
     "watch": "rollup -wc",
     "prepublish": "yarn build",
     "test": "karma start --single-run",
