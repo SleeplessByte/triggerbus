@@ -2295,9 +2295,9 @@ karma-jasmine@^1.1.2:
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/karma-jasmine/-/karma-jasmine-1.1.2.tgz#394f2b25ffb4a644b9ada6f22d443e2fd08886c3"
 
-karma-rollup-preprocessor@^6.0.0:
-  version "6.0.0"
-  resolved "https://registry.yarnpkg.com/karma-rollup-preprocessor/-/karma-rollup-preprocessor-6.0.0.tgz#6e9adb41ef6adab78694b1e286be53d11c42c18a"
+karma-rollup-preprocessor@^6.0.1:
+  version "6.0.1"
+  resolved "https://registry.yarnpkg.com/karma-rollup-preprocessor/-/karma-rollup-preprocessor-6.0.1.tgz#10b47c5634c473e82dc8232397d666cd42210ecb"
   dependencies:
     chokidar "^2.0.0"
 
