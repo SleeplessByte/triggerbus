@@ -1,4 +1,4 @@
-import triggerbus from '../src/triggerbus';
+import triggerbus from '../src/triggerbus'
 
 describe('triggerbus', () => {
   describe('creation', () => {

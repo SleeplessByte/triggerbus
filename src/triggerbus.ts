@@ -1,11 +1,17 @@
+type Unsubscribe = () => EventBus
+type Callback = (...args) => void
+
 class EventBus {
+
+  private callbacks: {}
+
   constructor() {
-    this.callbacks = {};
+    this.callbacks = {}
   }
 
-  _callbacks(name) {
+  _callbacks(name): Array<Callback> {
     if (!this.callbacks[name]) {
-      this.callbacks[name] = [];
+      this.callbacks[name] = []
     }
 
     return this.callbacks[name]
@@ -21,8 +27,8 @@ class EventBus {
    */
   trigger(name, ...args) {
     this._callbacks(name).forEach(function(c) {
-      c.apply(undefined, args);
-    });
+      c.apply(undefined, args)
+    })
     return this
   }
 
@@ -34,8 +40,8 @@ class EventBus {
    *
    * @returns {() => EventBus} unsubscribe this callback
    */
-  on(name, fn) {
-    this._callbacks(name).push(fn);
+  on(name, fn): Unsubscribe {
+    this._callbacks(name).push(fn)
     return () => this.off(name, fn)
   }
 
@@ -47,11 +53,11 @@ class EventBus {
   *
   * @returns {EventBus}
   */
-  off(name, fn) {
+  off(name: string, fn?: Callback): this {
     if (!fn) {
-      this.callbacks[name] = [];
+      this.callbacks[name] = []
     } else {
-      this.callbacks[name] = this._callbacks(name).filter((c) => c !== fn);
+      this.callbacks[name] = this._callbacks(name).filter((c) => c !== fn)
     }
     return this
   }
@@ -65,26 +71,24 @@ class EventBus {
    *
    * @returns {() => EventBus} unsubscribe this callback
    */
-  once(name, fn) {
-    const EventBus = this;
+  once(name: string, fn: Callback): Unsubscribe {
+    const EventBus = this
     function fnOnce(...args) {
-      fn.apply(undefined, args);
-      EventBus.off(name, fnOnce);
+      fn.apply(undefined, args)
+      EventBus.off(name, fnOnce)
     }
     return this.on(name, fnOnce)
   }
 }
 
-/**
- * Create a new {EventBus}
- *
- * @returns {EventBus}
- */
-const triggerbus = function() {
+interface triggerbus {
+  (): EventBus
+  EventBus: typeof EventBus
+}
+
+const triggerbus = <triggerbus>function () {
   return new EventBus()
-};
+}
+triggerbus.EventBus = EventBus
 
-
-triggerbus.EventBus = EventBus;
-
-export default triggerbus;
+export default triggerbus

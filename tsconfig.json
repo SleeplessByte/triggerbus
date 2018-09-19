@@ -1,0 +1,10 @@
+{
+    "lib": [ "dom", "es5", "es2015.collection" ],
+    "compilerOptions": {
+        "importHelpers": true,
+        "sourceMap": true,
+        "typeRoots": [
+            "node_modules/@types"
+        ]
+    }
+}

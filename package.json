@@ -1,12 +1,19 @@
 {
   "name": "triggerbus",
-  "version": "2.0.2",
+  "version": "3.0.0",
   "description": "Simple eventbus you can trigger",
-  "main": "dist/es/triggerbus.js",
+  "main": "dist/triggerbus.js",
+  "umd:main": "dist/triggerbus.umd.js",
+  "module": "dist/triggerbus.mjs",
+  "source": "src/triggerbus.ts",
   "scripts": {
-    "build": "rimraf dist && cross-env BABEL_ENV=production rollup -c && cpx \"src/**/*.d.ts\" dist",
-    "watch": "rollup -wc",
+    "prebuild": "yarn clean",
+    "build": "microbundle",
+    "predev": "yarn clean",
+    "dev": "yarn watch",
+    "watch": "microbundle watch",
     "prepublish": "yarn build",
+    "clean": "rimraf dist && rimraf .rp2t2_cache",
     "test": "karma start --single-run",
     "test:ci": "karma start --single-run --browsers Firefox",
     "test:watch": "karma start --no-single-run --auto-watch"
@@ -27,9 +34,7 @@
   },
   "homepage": "https://github.com/SleeplessByte/triggerbus#readme",
   "devDependencies": {
-    "@babel/core": "^7.0.0-beta.51",
-    "@babel/preset-env": "^7.0.0-beta.51",
-    "babel-preset-minify": "^0.5.0-alpha.a24dd066",
+    "@types/jasmine": "^2.8.8",
     "cpx": "^1.5.0",
     "cross-env": "^5.2.0",
     "jasmine-core": "^3.2.1",
@@ -38,10 +43,14 @@
     "karma-cli": "^1.0.1",
     "karma-firefox-launcher": "^1.1.0",
     "karma-jasmine": "^1.1.2",
-    "karma-rollup-preprocessor": "^6.0.1",
+    "karma-typescript": "^3.0.13",
+    "microbundle": "^0.6.0",
     "rimraf": "^2.6.2",
-    "rollup": "^0.66.0",
-    "rollup-plugin-babel": "^4.0.0-beta.5"
+    "tslib": "^1.9.3",
+    "tslint": "^5.11.0",
+    "typescript": "^3.0.3"
   },
-  "dependencies": {}
+  "dependencies": {
+    "karma-typescript-es6-transform": "^1.0.4"
+  }
 }

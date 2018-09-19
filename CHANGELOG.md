@@ -1,5 +1,14 @@
 # Changelog
 
+## 3.0.0
+
+- Replace rollup with mirobundle
+- Single typescript definition output
+- Typescript source file
+- Remove .iife.js output
+- Remove .es.js output
+- Rename .cjs.js to .js
+
 ## 2.0.1
 
 Remove package lock
