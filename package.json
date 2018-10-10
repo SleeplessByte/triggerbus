@@ -48,7 +48,7 @@
     "rimraf": "^2.6.2",
     "tslib": "^1.9.3",
     "tslint": "^5.11.0",
-    "typescript": "^3.1.1"
+    "typescript": "^3.1.2"
   },
   "dependencies": {
     "karma-typescript-es6-transform": "^1.0.4"
