@@ -45,7 +45,7 @@
     "karma-jasmine": "^2.0.1",
     "karma-typescript": "^3.0.13",
     "microbundle": "^0.9.0",
-    "rimraf": "^2.6.2",
+    "rimraf": "^2.6.3",
     "tslib": "^1.9.3",
     "tslint": "^5.12.0",
     "typescript": "^3.2.2"
