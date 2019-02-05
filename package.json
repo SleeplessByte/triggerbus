@@ -43,7 +43,7 @@
     "karma-cli": "^2.0.0",
     "karma-firefox-launcher": "^1.1.0",
     "karma-jasmine": "^2.0.1",
-    "karma-typescript": "^3.0.13",
+    "karma-typescript": "^4.0.0",
     "microbundle": "^0.9.0",
     "rimraf": "^2.6.3",
     "tslib": "^1.9.3",
@@ -51,6 +51,6 @@
     "typescript": "^3.3.1"
   },
   "dependencies": {
-    "karma-typescript-es6-transform": "^1.0.4"
+    "karma-typescript-es6-transform": "^4.0.0"
   }
 }

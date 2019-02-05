@@ -1,5 +1,17 @@
 # Changelog
 
+## 3.0.1
+- Update dependencies
+
+| size  | file |
+|-------|------|
+| 320 B | triggerbus.js.gz |
+| 269 B | triggerbus.js.br |
+| 320 B | triggerbus.mjs.gz |
+| 268 B | triggerbus.mjs.br |
+| 391 B | triggerbus.umd.js.gz |
+| 327 B | triggerbus.umd.js.br |
+
 ## 3.0.0
 
 - Replace rollup with mirobundle

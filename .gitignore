@@ -2,3 +2,5 @@ node_modules
 yarn-error.log
 .rpt2_cache
 coverage
+
+.rts2_cache_*
