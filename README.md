@@ -1,25 +1,20 @@
-# triggerbus
+# 🚌 triggerbus
 
 [![Build Status](https://travis-ci.com/SleeplessByte/triggerbus.svg?branch=master)](https://travis-ci.com/SleeplessByte/triggerbus)
 [![npm](https://img.shields.io/npm/v/triggerbus.svg)](https://www.npmjs.com/package/triggerbus)
 [![MIT license](http://img.shields.io/badge/license-MIT-brightgreen.svg)](http://opensource.org/licenses/MIT)
 [![Maintainability](https://api.codeclimate.com/v1/badges/26915d951dcc26ca4fe1/maintainability)](https://codeclimate.com/github/SleeplessByte/triggerbus/maintainability)
 
-Simple JavaScript eventbus that uses `trigger` to `emit` events.
+Simple Typescript eventbus that uses `trigger` to broadcast events. Works in any environment.
 
-```JavaScript
+```typescript
 import triggerbus from 'triggerbus'
 
 const bus = triggerbus()
 
-const callback = function(...args) {
-  // the callback
-}
-
-const off = bus.on('event', callback)
-// off is a function, same as bus.off('event', callback)
-
-bus.trigger('event', ...args)
+bus.on('event', console.log)
+bus.trigger('event', { foo: 42 })
+// => log('event', { foo: 42 })
 ```
 
 ## Installation
@@ -31,17 +26,26 @@ npm install triggerbus --save
 
 ## Usage
 
-To use the transpiled es version:
-
 ```TypeScript
 import triggerbus from 'triggerbus'
+
+const bus = triggerbus()
+
+const off1 = bus.on('name', callback)
+// => off1() unregisters callback from name
+//    alternatively: bus.off('name', callback)
+
+const off2 = bus.once('name', callback)
+// => off2() unregisters callback from name
+//    automatically unregisters after calling callback once
+
+bus.off('name')
+// => removes all listeners of name
+
+bus.off('name', callback)
+// => removes first listener that matches callback
+//    does *not* remove "once" listener
+
+bus.trigger('name', { foo: 42 })
+// => triggers all listeners on 'name' and '*' with ('name', { foo: 42 })
 ```
-
-Additionally there is
-
-- a umd bundle at `triggerbus/dist/umd/triggerbus.js`
-- a iife at `triggerbus/dist/iife/triggerbus.js`
-- import as CommonJS from `triggerbus/dist/cjs/triggerbus.js`
-- import untranspiled or javascript module from `triggerbus/dist/mjs/triggerbus.js`
-
-All come with their own type definitions.

@@ -1,6 +1,24 @@
 # Changelog
 
+## 4.0.0
+
+- Update dependencies
+- +16 bytes, add wildcard events
+- Change test library to ava
+- Add test coverage
+- Add sane typescript typings
+
+| size  | file |
+|-------|------|
+| 336 B | triggerbus.js.gz |
+| 287 B | triggerbus.js.br |
+| 337 B | triggerbus.mjs.gz |
+| 288 B | triggerbus.mjs.br |
+| 402 B | triggerbus.umd.js.gz |
+| 350 B | triggerbus.umd.js.br |
+
 ## 3.0.1
+
 - Update dependencies
 
 | size  | file |

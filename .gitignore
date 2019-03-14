@@ -1,6 +1,12 @@
 node_modules
 yarn-error.log
-.rpt2_cache
-coverage
 
-.rts2_cache_*
+.rts2_*
+
+triggerbus.js*
+triggerbus.mjs*
+triggerbus.umd*
+
+tests/*.test.js*
+.nyc_output
+coverage

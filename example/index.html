@@ -3,26 +3,61 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>triggerbus</title>
+    <title>🚌 triggerbus</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script src="../dist/triggerbus.umd.js"></script>
+    <script src="../triggerbus.umd.js"></script>
 </head>
 <body>
+    <h1>Example</h1>
+    <pre><code>
+const bus = triggerbus()
+bus.on('*', logger)
+
+const off = bus.on('🎁', function(event, param) { output(event, 'Got myself a ' + param) })
+bus.on('🎁', function(event, param) { output(event, 'But did I get a ' + param) })
+bus.trigger('🎁', '🍕')
+
+off()
+
+bus.trigger('🎁', 'real 🍕')
+bus.off('🎁')
+
+bus.trigger('🎁', '🌯')
+    </code></pre>
+
+    <h2>Output</h2>
+    <output><pre><code data-target="output"></code></pre></output>
+    <h2>Wildcard logger</h2>
+    <output><pre><code data-target="logger"></code></pre></output>
+
     <script>
-        const bus = triggerbus()
-        const off = bus.on('event', function(param) { console.log('Got myself a ' + param) })
-        bus.on('event', function(param) { console.log('But did I get a ' + param) })
-        bus.trigger('event', 'pizza')
+      const out = document.querySelector('[data-target="output"]')
+      const log = document.querySelector('[data-target="logger"]')
 
-        off()
+      function output(event, data) {
+        out.appendChild(document.createTextNode(`${event}: ${data}`))
+        out.appendChild(document.createElement('br'))
+      }
 
-        bus.trigger('event', 'real pizza')
-        bus.off('event')
+      function logger(event, data) {
+        log.appendChild(document.createTextNode(`${event}: ${data}`))
+        log.appendChild(document.createElement('br'))
+      }
 
-        bus.trigger('event', 'wrap')
-        // sad no pizza
+      const bus = triggerbus()
+      bus.on('*', logger)
+
+      const off = bus.on('🎁', function(event, param) { output(event, 'Got myself a ' + param) })
+      bus.on('🎁', function(event, param) { output(event, 'But did I get a ' + param) })
+      bus.trigger('🎁', '🍕')
+
+      off()
+
+      bus.trigger('🎁', 'real 🍕')
+      bus.off('🎁')
+
+      bus.trigger('🎁', '🌯')
+      // sad no pizza
     </script>
-
-    Check that console for some food.
 </body>
 </html>
