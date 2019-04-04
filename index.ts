@@ -1,0 +1,1 @@
+$ echo "export const foo: any = 'bar'";

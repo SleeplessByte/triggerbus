@@ -67,7 +67,13 @@ export default function triggerbus(preset?: Registry) {
      * @param event optional event data, second argument to fns
      */
     trigger(name: Name, event?: any) {
-      each(sure(registry, '*').concat(name !== '*' && sure(registry, name) || []), name, event)
+      each(
+        sure(registry, '*').concat(
+          (name !== '*' && sure(registry, name)) || []
+        ),
+        name,
+        event
+      )
     }
   }
 }
