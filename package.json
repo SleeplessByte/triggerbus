@@ -43,7 +43,7 @@
     "@types/node": "^13.13.4",
     "ava": "^3.8.2",
     "esm": "^3.2.25",
-    "microbundle": "^0.11.0",
+    "microbundle": "^0.12.3",
     "nyc": "^15.0.1",
     "prettier": "2.0.5",
     "rimraf": "^3.0.2",
